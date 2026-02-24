@@ -1,58 +1,64 @@
-Hospital Readmissions SQL EDA
-Project Overview
+# Hospital Readmissions SQL EDA
 
-This project performs SQL-driven exploratory data analysis on the UCI Diabetes 130-US Hospitals dataset to investigate drivers of 30-day hospital readmission risk.
+## Project Overview
+
+This project performs SQL-driven exploratory data analysis on the **UCI Diabetes 130-US Hospitals dataset** to investigate drivers of 30-day hospital readmission risk.
 
 The analysis focuses on cohort-based risk stratification using age, diagnosis complexity, and medication burden to identify high-risk patient segments.
 
 The workflow demonstrates:
 
-Structured SQL query design
+- Structured SQL query design  
+- Automated SQL execution pipeline (`run_query.py`)  
+- Conditional aggregation and KPI computation  
+- Cohort-level risk segmentation  
+- Statistical testing (chi-square)  
+- Heatmap-based visualization in Jupyter  
 
-Automated SQL execution pipeline (run_query.py)
+---
 
-Conditional aggregation and KPI computation
-
-Cohort-level risk segmentation
-
-Statistical testing (chi-square)
-
-Heatmap-based visualization in Jupyter
-
-Analytical Approach
+## Analytical Approach
 
 The project follows a reproducible pipeline:
 
-Raw diabetes dataset loaded into SQLite.
+1. Raw diabetes dataset loaded into SQLite.  
+2. SQL queries generate:
+   - Overall readmission rates  
+   - Age-stratified readmission rates  
+   - Multi-factor cohort segmentation  
+3. Cohorts defined by:
+   - `age`
+   - `number_diagnoses` (bucketed into Low / Med / High)
+   - `num_medications` (bucketed into Low / Med / High)
+4. Minimum cohort size threshold applied (`HAVING COUNT(*) >= 50`) to reduce noise from small samples.  
+5. Results visualized using pivot tables and heatmaps in Python.
 
-SQL queries generate:
+---
 
-Overall readmission rates
+## Key Findings
 
-Age-stratified readmission rates
+- Overall 30-day readmission rate: **11.16%**
+- Age group **20–30** exhibited the highest proportional readmission rate among age buckets.
+- Clinical complexity (high diagnoses + high medication count) consistently ranked among the highest-risk cohorts across nearly all age groups.
+- Within high-complexity cohorts, younger patients demonstrated elevated readmission rates relative to older cohorts.
+- Chi-square testing confirmed a statistically significant association between age and readmission (p < 0.001).
 
-Multi-factor cohort segmentation
+---
 
-Cohorts defined by:
+## Example Cohort Insight
 
-age
+**Top high-risk segment identified:**
 
-number_diagnoses (bucketed into Low / Med / High)
+- Age: 20–30  
+- Diagnosis Burden: High  
+- Medication Burden: High  
+- Readmission Rate: **19.69%**
 
-num_medications (bucketed into Low / Med / High)
+This suggests that medical complexity is a stronger predictor of readmission than age alone, with age acting as a modifier within high-complexity populations.
 
-Minimum cohort size threshold applied (HAVING COUNT(*) >= 50) to reduce noise from small samples.
+---
 
-Results visualized using pivot tables and heatmaps in Python.
+## Project Structure
 
-Key Findings
 
-Overall 30-day readmission rate: 11.16%
 
-Age group 20–30 exhibited the highest proportional readmission rate among age buckets.
-
-Clinical complexity (high diagnoses + high medication count) consistently ranked among the highest-risk cohorts across nearly all age groups.
-
-Within high-complexity cohorts, younger patients demonstrated elevated readmission rates relative to older cohorts.
-
-Chi-square testing confirmed a statistically significant association between age and readmission (p < 0.001).
