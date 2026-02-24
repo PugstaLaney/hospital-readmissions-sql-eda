@@ -1,0 +1,21 @@
+age,dx_bucket,med_bucket,total_patients
+[70-80),High Dx,Med Meds,10440
+[60-70),High Dx,Med Meds,8227
+[80-90),High Dx,Med Meds,7492
+[50-60),High Dx,Med Meds,5770
+[70-80),High Dx,High Meds,5276
+[60-70),High Dx,High Meds,5130
+[50-60),High Dx,High Meds,3516
+[70-80),High Dx,Low Meds,3501
+[70-80),Med Dx,Med Meds,3205
+[80-90),High Dx,High Meds,3097
+[40-50),High Dx,Med Meds,3010
+[80-90),High Dx,Low Meds,2956
+[60-70),Med Dx,Med Meds,2932
+[60-70),High Dx,Low Meds,2593
+[50-60),Med Dx,Med Meds,2473
+[70-80),Med Dx,Low Meds,2143
+[50-60),High Dx,Low Meds,2000
+[50-60),Med Dx,Low Meds,1847
+[60-70),Med Dx,Low Meds,1840
+[80-90),Med Dx,Med Meds,1666

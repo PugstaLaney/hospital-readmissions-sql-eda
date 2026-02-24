@@ -22,4 +22,4 @@ FROM readmissions
 GROUP BY age, dx_bucket, med_bucket
 HAVING COUNT(*) >= 50
 ORDER BY readmit_30_rate_percent DESC
-LIMIT 10;
+LIMIT 25;

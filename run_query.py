@@ -1,3 +1,23 @@
+"""
+run_query.py
+
+This script serves as the SQL execution pipeline for the Hospital Readmissions project.
+
+Purpose:
+- Connects to the main hospital_readmissions.db database
+- Executes all SQL files located in the /sql directory
+- Generates output CSV files in the /outputs directory
+
+Context:
+The database was created from the original diabetes hospital dataset.
+Each SQL file performs analytical queries related to 30-day readmission risk,
+including cohort analysis and readmission rate calculations.
+
+This script allows the project to function as a reproducible SQL analytics pipeline.
+"""
+
+
+
 import sqlite3
 import pandas as pd
 from pathlib import Path
