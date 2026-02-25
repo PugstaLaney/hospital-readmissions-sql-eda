@@ -58,7 +58,16 @@ This suggests that medical complexity is a stronger predictor of readmission tha
 
 ---
 
-## Project Structure
+## Predictive Modeling
 
+Baseline cohort-bucket model:
+- ROC AUC: 0.56
+
+Expanded administrative feature model:
+- ROC AUC: 0.67
+- PR AUC: 0.22
+- Top 10% highest-risk group contains 26.9% readmission rate (vs 11.2% baseline)
+
+This demonstrates that granular utilization and treatment features significantly improve risk stratification performance.
 
 
