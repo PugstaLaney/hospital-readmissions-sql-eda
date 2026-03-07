@@ -306,4 +306,4 @@ README.md
 - Patient-level features significantly improve model discrimination.
 - Logistic regression performed competitively against nonlinear models.
 - Probability calibration is essential before deploying risk predictions in clinical workflows.
-- Medication indicators can act as **proxies for disease severity**, highlighting the importance of careful interpretation.
+- Medication indicators can act as **proxies for disease severity**, highlighting the importance of careful interpretation.  
